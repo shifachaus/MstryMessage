@@ -61,12 +61,11 @@ export async function GET(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.log("Error in getting message acceptance status");
-
+    console.error("An unexpected error occured", error);
     return Response.json(
       {
-        success: false,
-        message: "Error in getting message acceptance status",
+        success: true,
+        message: "An unexpected error",
       },
       { status: 500 }
     );
